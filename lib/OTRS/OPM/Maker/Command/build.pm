@@ -15,7 +15,13 @@ sub abstract {
 }
 
 sub usage_desc {
-    return "opmbuild build <path_to_sopm>";
+    return "opmbuild build [--output <output_path>] <path_to_sopm>";
+}
+
+sub opt_spec {
+    return (
+        [ "output=s", "Output path for OPM file" ],
+    );
 }
 
 sub validate_args {
@@ -74,8 +80,9 @@ sub execute {
     my $package_name = $root_elem->findvalue( 'Name' );
     my $file_name    = sprintf "%s-%s.opm", $package_name, $version;
     
-    my $opm_path = Path::Class::File->new( $path, $file_name );
-    my $fh       = $opm_path->openw;
+    my $output_path = $opt->{output} || $path;
+    my $opm_path    = Path::Class::File->new( $output_path, $file_name );
+    my $fh          = $opm_path->openw;
     $fh->print( $tree->toString );
 }
 
