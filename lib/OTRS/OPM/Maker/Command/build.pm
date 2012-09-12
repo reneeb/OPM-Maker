@@ -3,6 +3,8 @@ package OTRS::OPM::Maker::Command::build;
 use strict;
 use warnings;
 
+# ABSTRACT: Build OTRS packages
+
 use MIME::Base64 ();
 use Sys::Hostname;
 use Path::Class ();

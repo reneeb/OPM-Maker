@@ -1,5 +1,7 @@
 package OTRS::OPM::Maker::Command::dependencies;
 
+# ABSTRACT: List dependencies of OTRS packages
+
 use strict;
 use warnings;
 

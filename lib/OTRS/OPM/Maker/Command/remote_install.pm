@@ -1,5 +1,7 @@
 package OTRS::OPM::Maker::Command::remote_install;
 
+# ABSTRACT: install OTRS packages on a remote OTRS instance
+
 use strict;
 use warnings;
 

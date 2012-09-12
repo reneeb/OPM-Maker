@@ -1,5 +1,7 @@
 package OTRS::OPM::Maker::Command::filetest;
 
+# ABSTRACT: check if filelist in .sopm includes the files on your disk
+
 use strict;
 use warnings;
 

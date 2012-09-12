@@ -1,5 +1,7 @@
 package OTRS::OPM::Maker::Command::sopmtest;
 
+# ABSTRACT: Check if sopm is valid
+
 use strict;
 use warnings;
 
