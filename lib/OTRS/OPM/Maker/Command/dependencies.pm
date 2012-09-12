@@ -3,6 +3,8 @@ package OTRS::OPM::Maker::Command::dependencies;
 use strict;
 use warnings;
 
+use XML::LibXML;
+
 use OTRS::OPM::Maker -command;
 
 sub abstract {
