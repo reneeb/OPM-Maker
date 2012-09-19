@@ -4,7 +4,7 @@ use App::Cmd::Setup -app;
 
 # ABSTRACT: Module/App to build and test OTRS packages
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 =head1 DESCRIPTION
 
@@ -37,6 +37,10 @@ When you develop the package you might not want to build new version of your pac
 =item * devunlink
 
 Remove the symlinks created with C<devlink>.
+
+=item * index
+
+build an index file for an OPM repository.
 
 =back
 
