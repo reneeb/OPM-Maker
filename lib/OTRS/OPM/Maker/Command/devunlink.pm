@@ -40,7 +40,7 @@ sub execute {
     my $sopm_file = $args->[0];
     my $sopm_path = Path::Class::File->new( $sopm_file );
     my $path      = $sopm_path->dir;
-    my $path_str  = $path->stringify;
+    my $path_str  = $path->absolute;
         
     my @files_in_fs = File::Find::Rule->file->in( $path_str );
     
@@ -53,7 +53,7 @@ sub execute {
 
     FILE:
     for my $file ( @files ) {
-        (my $target = $file) =~ s{$path_str}{$otrs_dir};
+        (my $target = $file) =~ s{\Q$path_str}{$otrs_dir};
         
         if ( -l $target ) {
             
