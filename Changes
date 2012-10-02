@@ -1,0 +1,19 @@
+Changes file for OTRS::OPM::Maker:
+
+0.04 2012-10-02
+
+     fixed typo in XML generation (index command)
+     added Changes file
+
+0.03 2012-09-19
+
+      added "index" command
+
+0.02 2012-09-15
+
+      improve documentation
+      added more commands
+
+0.01 2012-09-12
+
+      initial release
