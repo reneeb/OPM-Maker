@@ -101,7 +101,7 @@ sub execute {
     print sprintf qq~<?xml version="1.0" encoding="utf-8" ?>
 <otrs_package_list version="1.0">
 %s
-</otrs_pacakge_list>
+</otrs_package_list>
 ~, join "", @packages;
 }
 
