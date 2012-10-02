@@ -1,5 +1,9 @@
 Changes file for OTRS::OPM::Maker:
 
+0.05 2012-10-02
+
+     fixed index command: added File tag
+
 0.04 2012-10-02
 
      fixed typo in XML generation (index command)

@@ -5,6 +5,7 @@ use warnings;
 
 # ABSTRACT: Build index for an OPM repository
 
+use File::Basename;
 use File::Find::Rule;
 use MIME::Base64 ();
 use Sys::Hostname;
@@ -42,7 +43,11 @@ sub execute {
     my $pp = XML::LibXML::PrettyPrint->new( 
         indent_string => '  ',
         element       => {
-            compact => [qw(Vendor Name Description Version Framework ModuleRequired PackageRequired URL License)],
+            compact => [qw(
+                Vendor Name Description Version Framework 
+                ModuleRequired PackageRequired URL License
+                File
+            )],
         },
     );
     
@@ -89,6 +94,11 @@ sub execute {
             my @nodes = $root_elem->findnodes( $node_name );
             $_->parentNode->removeChild( $_ ) for @nodes;
         }
+        
+        my $file_node  = XML::LibXML::Element->new( 'File' );
+        (my $file_path = $file) =~ s/\Q$dir//;
+        $file_node->appendText( $file_path );
+        $root_elem->addChild( $file_node );
         
         $pp->pretty_print( $tree );
         
