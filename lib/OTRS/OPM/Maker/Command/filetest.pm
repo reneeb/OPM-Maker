@@ -39,9 +39,11 @@ sub execute {
     my $sopm_path = Path::Class::File->new( $file );
     my $path      = $sopm_path->dir;
     
-    my $path_str    = $path->stringify;
-    
-    my @files_in_fs = File::Find::Rule->file->in( $path_str );
+    my $path_str     = $path->stringify;
+    my $ignore_files = File::Find::Rule->file->name(".*");    
+    my @files_in_fs  = File::Find::Rule->file
+        ->not( $ignore_files )
+        ->in ( $path_str );
     
     my %fs = map{ $_ =~ s{$path_str/?}{}; $_ => 1 }
         grep{ $_ !~ /\.git|CVS|svn/ }@files_in_fs;
