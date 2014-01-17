@@ -1,5 +1,8 @@
 package OTRS::OPM::Maker;
 
+use strict;
+use warnings;
+
 use App::Cmd::Setup -app;
 
 # ABSTRACT: Module/App to build and test OTRS packages
