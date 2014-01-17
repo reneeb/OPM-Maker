@@ -69,7 +69,7 @@ sub execute {
         $file->appendText( $base64 );
     }
     
-    my $build_date = XML::LibXML::Element->new( 'BuildHost' );
+    my $build_date = XML::LibXML::Element->new( 'BuildDate' );
     $build_date->appendText( $timestamp );
     
     my $build_host = XML::LibXML::Element->new( 'BuildHost' );
