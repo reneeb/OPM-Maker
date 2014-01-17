@@ -54,7 +54,7 @@ sub execute {
         return;
     };
     
-    return;
+    return 1;
 }
 
 1;
