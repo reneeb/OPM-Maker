@@ -10,6 +10,8 @@ use XML::LibXML;
 
 use OTRS::OPM::Maker -command;
 
+our $VERSION = 0.07;
+
 sub abstract {
     return "check .sopm if it is valid";
 }

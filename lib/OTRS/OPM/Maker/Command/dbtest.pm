@@ -7,4 +7,6 @@ use warnings;
 
 use OTRS::OPM::Maker -command;
 
+our $VERSION = 0.07;
+
 1;
