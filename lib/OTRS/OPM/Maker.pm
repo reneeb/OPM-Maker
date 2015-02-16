@@ -7,7 +7,7 @@ use App::Cmd::Setup -app;
 
 # ABSTRACT: Module/App to build and test OTRS packages
 
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 =head1 DESCRIPTION
 
