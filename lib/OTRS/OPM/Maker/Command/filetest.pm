@@ -69,6 +69,7 @@ sub execute {
     if ( @not_found ) {
         print "Files listed in .sopm but not found on disk:\n",
             map{ "    - $_\n" }@not_found;
+        exit 1;
     }
     
     if ( %fs ) {

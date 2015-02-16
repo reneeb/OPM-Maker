@@ -43,10 +43,6 @@ Currently under development:
 
 =over 4
 
-=item * remote_install
-
-Install the OPM file on any OTRS instance. That remote OTRS instance need an OTRS package installed (this is also under development)
-
 =item * dbtest
 
 Check if the C<DatabaseInstall> and C<DatabaseUninstall> sections in your .sopm files are valid. And it checks for SQL keywords.
