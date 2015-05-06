@@ -47,7 +47,7 @@ sub execute {
         ->not( $ignore_files )
         ->in ( $path_str );
     
-    my %fs = map{ $_ =~ s{$path_str/?}{}; $_ => 1 }
+    my %fs = map{ $_ =~ s{\A\Q$path_str\E/?}{}; $_ => 1 }
         grep{ $_ !~ /\.git|CVS|svn/ }@files_in_fs;
         
     delete $fs{ $sopm_path->basename };
