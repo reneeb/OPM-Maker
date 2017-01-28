@@ -19,12 +19,13 @@ sub abstract {
 }
 
 sub usage_desc {
-    return "opmbuild build [--output <output_path>] <path_to_sopm>";
+    return "opmbuild build [--version <version>] [--output <output_path>] <path_to_sopm>";
 }
 
 sub opt_spec {
     return (
-        [ "output=s", "Output path for OPM file" ],
+        [ "output=s",  "Output path for OPM file" ],
+        [ "version=s", "Version to be used (override the one from the sopm file)" ],
     );
 }
 
@@ -80,9 +81,13 @@ sub execute {
     $root_elem->addChild( $build_date );
     $root_elem->addChild( $build_host );
     
-    my $version      = $root_elem->findvalue( 'Version' );
+    my $version = $root_elem->find( 'Version' )->[0];
+    if ( $opt->{version} ) {
+        $version->removeChildNodes();
+        $version->appendText( $opt->{version} );
+    }
     my $package_name = $root_elem->findvalue( 'Name' );
-    my $file_name    = sprintf "%s-%s.opm", $package_name, $version;
+    my $file_name    = sprintf "%s-%s.opm", $package_name, $version->textContent;
     
     my $output_path = $opt->{output} || $path;
     my $opm_path    = Path::Class::File->new( $output_path, $file_name );
