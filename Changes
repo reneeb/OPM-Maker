@@ -1,6 +1,25 @@
 Changes file for OTRS::OPM::Maker
 =================================
 
+0.11 2017-01-31
+
+     [MISC]
+     * Fix dependencies list in dist.ini
+     * Update changes
+
+0.10 2017-01-29
+
+     [IMPROVEMENTS]
+     * (build) add param '--version' to override version setting in .sopm (Thanks to @tadzik, #PR2)
+
+     [TESTS]
+     * Add tests for 'build' command
+
+0.09 2015-05-07
+
+     [IMPROVEMENTS]
+     * (filetest) improve regex in filetest command: use \Q..\E and use an anchor
+
 0.08 2015-02-16
 
      [MISC]
