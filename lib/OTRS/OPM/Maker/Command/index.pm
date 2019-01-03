@@ -30,6 +30,7 @@ sub validate_args {
     
     $self->usage_error( 'need path to directory that contains opm files' ) if
         !$args ||
+        'ARRAY' ne ref $args ||
         !$args->[0] ||
         !-d $args->[0];
 }
