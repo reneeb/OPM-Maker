@@ -8,7 +8,7 @@ OTRS::OPM::Maker - Module/App to build and test OTRS packages
 
 # VERSION
 
-version 0.12
+version 0.13
 
 # DESCRIPTION
 

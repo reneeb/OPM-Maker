@@ -12,7 +12,7 @@ use XML::LibXML;
 
 use OTRS::OPM::Maker -command;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 sub abstract {
     return "build package files for OTRS";
