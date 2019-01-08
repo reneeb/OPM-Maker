@@ -11,7 +11,7 @@ use XML::LibXML;
 
 use OTRS::OPM::Maker -command;
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 sub abstract {
     return "Check if filelist in .sopm includes the files on your disk";
