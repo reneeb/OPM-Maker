@@ -54,7 +54,7 @@ sub execute {
         },
     );
     
-    for my $file ( @opm_files ) {
+    for my $file ( sort @opm_files ) {
         my $parser = XML::LibXML->new;
         my $tree   = $parser->parse_file( $file );
         
