@@ -54,9 +54,9 @@ sub execute {
         },
     );
     
-    for my $file ( sort @opm_files ) {
+    for my $opm_file ( sort @opm_files ) {
         my $parser = XML::LibXML->new;
-        my $tree   = $parser->parse_file( $file );
+        my $tree   = $parser->parse_file( $opm_file );
         
         $tree->setStandalone( 0 );
         
@@ -99,7 +99,7 @@ sub execute {
         }
         
         my $file_node  = XML::LibXML::Element->new( 'File' );
-        (my $file_path = $file) =~ s/\Q$dir//;
+        (my $file_path = $opm_file) =~ s/\Q$dir//;
         $file_node->appendText( $file_path );
         $root_elem->addChild( $file_node );
         
