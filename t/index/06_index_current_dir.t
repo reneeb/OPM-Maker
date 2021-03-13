@@ -17,10 +17,15 @@ use_ok 'OTRS::OPM::Maker::Command::index';
 my $dir     = File::Spec->rel2abs( dirname __FILE__ );
 my $opm_dir = File::Spec->catdir( $dir, '..', 'repo' );
 
-my $opm_file = File::Spec->catfile( $opm_dir, 'SecondSMTP-0.0.1.opm' ), '.';
-copy $opm_file, '.';
+mkdir './local_index';
 
-ok -f './SecondSMTP-0.0.1.opm';
+my $opm_file   = File::Spec->catfile( $opm_dir, 'SecondSMTP-0.0.1.opm' );
+my $local_file = File::Spec->catfile( './local_index', 'SecondSMTP-0.0.1.opm');
+copy $opm_file, $local_file;
+
+ok -f $local_file;
+
+chdir './local_index';
 
 my $index = q~<?xml version="1.0" encoding="utf-8" ?>
 <otrs_package_list version="1.0">
@@ -47,8 +52,9 @@ my $index = q~<?xml version="1.0" encoding="utf-8" ?>
         OTRS::OPM::Maker::Command::index::execute( undef, {}, [ '.' ] );
     };
 
-    unlink $opm_file; 
-    ok !-f './SecondSMTP-0.0.1.opm';
+    chdir '..';
+    unlink $local_file; 
+    ok !-f $local_file;
 
     #diag $exec_output;
 
