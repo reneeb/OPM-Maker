@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+# ABSTRACT: script to build/test OPM packages
+
+use strict;
+use warnings;
+
+use OPM::Maker;
+OPM::Maker->run;
+
+package opmbuild;
