@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/reneeb/OTRS-OPM-Maker.svg?branch=master)](https://travis-ci.org/reneeb/OTRS-OPM-Maker)
-[![Kwalitee status](http://cpants.cpanauthors.org/dist/OTRS-OPM-Maker.png)](https://cpants.cpanauthors.org/dist/OTRS-OPM-Maker)
-[![GitHub issues](https://img.shields.io/github/issues/reneeb/OTRS-OPM-Maker.svg)](https://github.com/reneeb/OTRS-OPM-Maker/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.19)](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.19)
+[![Build Status](https://travis-ci.org/reneeb/OPM-Maker.svg?branch=master)](https://travis-ci.org/reneeb/OPM-Maker)
+[![Kwalitee status](http://cpants.cpanauthors.org/dist/OPM-Maker.png)](https://cpants.cpanauthors.org/dist/OPM-Maker)
+[![GitHub issues](https://img.shields.io/github/issues/reneeb/OPM-Maker.svg)](https://github.com/reneeb/OPM-Maker/issues)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OPM-Maker-1.00)](https://cpancoverbadge.perl-services.de/OPM-Maker-1.00)
 
 # NAME
 
@@ -9,7 +9,7 @@ OPM::Maker - Module/App to build and test OPM packages for Znuny, OTOBO, ((OTRS)
 
 # VERSION
 
-version 0.19
+version 1.00
 
 # DESCRIPTION
 
@@ -51,13 +51,13 @@ The distribution is contained in a Git repository, so simply clone the
 repository
 
 ```
-$ git clone https://github.com/reneeb/OTRS-OPM-Maker.git
+$ git clone https://github.com/reneeb/OPM-Maker.git
 ```
 
 and change into the newly-created directory.
 
 ```
-$ cd OTRS-OPM-Maker
+$ cd OPM-Maker
 ```
 
 The project uses [`Dist::Zilla`](https://metacpan.org/pod/Dist::Zilla) to

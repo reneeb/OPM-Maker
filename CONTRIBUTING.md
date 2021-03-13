@@ -5,13 +5,13 @@ The distribution is contained in a Git repository, so simply clone the
 repository
 
 ```
-$ git clone https://github.com/reneeb/OTRS-OPM-Maker.git
+$ git clone https://github.com/reneeb/OPM-Maker.git
 ```
 
 and change into the newly-created directory.
 
 ```
-$ cd OTRS-OPM-Maker
+$ cd OPM-Maker
 ```
 
 The project uses [`Dist::Zilla`](https://metacpan.org/pod/Dist::Zilla) to
