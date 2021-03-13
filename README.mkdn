@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/reneeb/OTRS-OPM-Maker.svg?branch=master)](https://travis-ci.org/reneeb/OTRS-OPM-Maker)
 [![Kwalitee status](http://cpants.cpanauthors.org/dist/OTRS-OPM-Maker.png)](https://cpants.cpanauthors.org/dist/OTRS-OPM-Maker)
 [![GitHub issues](https://img.shields.io/github/issues/reneeb/OTRS-OPM-Maker.svg)](https://github.com/reneeb/OTRS-OPM-Maker/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.17)](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.17)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.18)](https://cpancoverbadge.perl-services.de/OTRS-OPM-Maker-0.18)
 
 # NAME
 
@@ -9,7 +9,7 @@ OTRS::OPM::Maker - Module/App to build and test OTRS packages
 
 # VERSION
 
-version 0.17
+version 0.18
 
 # DESCRIPTION
 
