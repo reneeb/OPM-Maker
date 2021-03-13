@@ -7,11 +7,11 @@ use Test::More;
 use File::Basename;
 use File::Spec;
 
-use OTRS::OPM::Maker;
-use OTRS::OPM::Maker::Command::dbtest;
+use OPM::Maker;
+use OPM::Maker::Command::dbtest;
 
-my $dbtest = OTRS::OPM::Maker::Command::dbtest->new({
-    app => OTRS::OPM::Maker->new
+my $dbtest = OPM::Maker::Command::dbtest->new({
+    app => OPM::Maker->new
 });
 
 {

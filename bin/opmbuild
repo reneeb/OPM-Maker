@@ -1,13 +1,11 @@
 #!/usr/bin/perl
 
-# ABSTRACT: script to build/test OTRS packages
+# ABSTRACT: script to build/test OPM packages
 
 use strict;
 use warnings;
 
-#use Getopt::Long;
-
-use OTRS::OPM::Maker;
-OTRS::OPM::Maker->run;
+use OPM::Maker;
+OPM::Maker->run;
 
 package opmbuild;

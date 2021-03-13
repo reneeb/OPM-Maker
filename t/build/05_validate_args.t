@@ -7,11 +7,11 @@ use Test::More;
 use File::Basename;
 use File::Spec;
 
-use OTRS::OPM::Maker;
-use OTRS::OPM::Maker::Command::build;
+use OPM::Maker;
+use OPM::Maker::Command::build;
 
-my $build = OTRS::OPM::Maker::Command::build->new({
-    app => OTRS::OPM::Maker->new
+my $build = OPM::Maker::Command::build->new({
+    app => OPM::Maker->new
 });
 
 {

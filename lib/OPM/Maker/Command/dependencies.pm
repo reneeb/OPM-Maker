@@ -1,4 +1,4 @@
-package OTRS::OPM::Maker::Command::dependencies;
+package OPM::Maker::Command::dependencies;
 
 # ABSTRACT: List dependencies of OTRS packages
 
@@ -7,10 +7,10 @@ use warnings;
 
 use XML::LibXML;
 
-use OTRS::OPM::Maker -command;
+use OPM::Maker -command;
 
 sub abstract {
-    return "list dependencies for OTRS packages";
+    return "list dependencies for OPM packages";
 }
 
 sub usage_desc {
@@ -36,13 +36,13 @@ sub execute {
     my $tree   = $parser->parse_file( $file );
         
     my $root_elem = $tree->getDocumentElement;
-    
+
     # retrieve file information
     my @package_req = $root_elem->findnodes( 'PackageRequired' );
     my @modules_req = $root_elem->findnodes( 'ModuleRequired' );
     
     my %labels = (
-        PackageRequired => 'OTRS add on',
+        PackageRequired => 'OPM package',
         ModuleRequired  => 'CPAN module',
     );
         

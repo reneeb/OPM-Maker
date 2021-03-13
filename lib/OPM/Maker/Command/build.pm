@@ -1,19 +1,19 @@
-package OTRS::OPM::Maker::Command::build;
+package OPM::Maker::Command::build;
 
 use strict;
 use warnings;
 
-# ABSTRACT: Build OTRS packages
+# ABSTRACT: Build OPM packages
 
 use MIME::Base64 ();
 use Sys::Hostname;
 use Path::Class ();
 use XML::LibXML;
 
-use OTRS::OPM::Maker -command;
+use OPM::Maker -command;
 
 sub abstract {
-    return "build package files for OTRS";
+    return "build package files for Znuny, OTOBO or ((OTRS)) Community Edition";
 }
 
 sub usage_desc {

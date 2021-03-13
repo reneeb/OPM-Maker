@@ -1,4 +1,4 @@
-package OTRS::OPM::Maker::Command::index;
+package OPM::Maker::Command::index;
 
 use strict;
 use warnings;
@@ -13,7 +13,7 @@ use Path::Class ();
 use XML::LibXML;
 use XML::LibXML::PrettyPrint;
 
-use OTRS::OPM::Maker -command;
+use OPM::Maker -command;
 
 sub abstract {
     return "build index for an OPM repository";
@@ -51,6 +51,8 @@ sub execute {
             )],
         },
     );
+
+    my $root_name;
     
     for my $opm_file ( sort @opm_files ) {
         my $parser = XML::LibXML->new;
@@ -59,6 +61,7 @@ sub execute {
         $tree->setStandalone( 0 );
         
         my $root_elem = $tree->getDocumentElement;
+        $root_name = $root_elem->nodeName();
         $root_elem->setNodeName( 'Package' );
         $root_elem->removeAttribute( 'version' );
         
@@ -112,12 +115,17 @@ sub execute {
         
         push @packages, $xml;
     }
+
+    $root_name //= 'otrs';
+    my $product  = $root_name =~ m{otobo} ? 'otobo' : 'otrs';
+ 
+    my $packages_list = join '', @packages;
     
     print sprintf qq~<?xml version="1.0" encoding="utf-8" ?>
-<otrs_package_list version="1.0">
+<%s_package_list version="1.0">
 %s
-</otrs_package_list>
-~, join "", @packages;
+</%s_package_list>
+~, $product, $packages_list, $product;
 }
 
 1;

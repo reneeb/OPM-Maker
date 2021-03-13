@@ -11,7 +11,7 @@ use File::Spec;
 use File::Basename;
 use File::Temp qw(tempdir);
 
-use_ok 'OTRS::OPM::Maker::Command::index';
+use_ok 'OPM::Maker::Command::index';
 
 my $dir     = File::Spec->rel2abs( dirname __FILE__ );
 my $opm_dir = File::Spec->catdir( $dir, '..', 'repo' );
@@ -50,7 +50,7 @@ my $index = q~<?xml version="1.0" encoding="utf-8" ?>
 
 {
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::index::execute( undef, {}, [ $opm_dir ] );
+        OPM::Maker::Command::index::execute( undef, {}, [ $opm_dir ] );
     };
 
     #diag $exec_output;

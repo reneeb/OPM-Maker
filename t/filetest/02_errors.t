@@ -11,7 +11,7 @@ use File::Spec;
 use File::Basename;
 use File::Temp qw(tempdir);
 
-use_ok 'OTRS::OPM::Maker::Command::filetest';
+use_ok 'OPM::Maker::Command::filetest';
 
 my $dir  = File::Spec->catdir( dirname( __FILE__ ), '..', 'invalid' );
 my $sopm = File::Spec->catfile( $dir, 'TestSMTP.sopm' );
@@ -23,7 +23,7 @@ my $sopm = File::Spec->catfile( $dir, 'TestSMTP.sopm' );
 ';
 
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::filetest::execute( undef, {}, [ $sopm ] );
+        OPM::Maker::Command::filetest::execute( undef, {}, [ $sopm ] );
     };
 
     #diag $exec_output;

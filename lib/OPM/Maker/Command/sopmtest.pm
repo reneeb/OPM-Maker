@@ -1,4 +1,4 @@
-package OTRS::OPM::Maker::Command::sopmtest;
+package OPM::Maker::Command::sopmtest;
 
 # ABSTRACT: Check if sopm is valid
 
@@ -8,7 +8,7 @@ use warnings;
 use Path::Class ();
 use XML::LibXML;
 
-use OTRS::OPM::Maker -command;
+use OPM::Maker -command;
 
 sub abstract {
     return "check .sopm if it is valid";

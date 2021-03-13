@@ -11,7 +11,7 @@ use File::Spec;
 use File::Basename;
 use File::Temp qw(tempdir);
 
-use_ok 'OTRS::OPM::Maker::Command::sopmtest';
+use_ok 'OPM::Maker::Command::sopmtest';
 
 my $dir         = File::Spec->catdir( dirname( __FILE__ ), '..', 'invalid' );
 my $textfile    = File::Spec->catfile( $dir, 'test.sopm' );
@@ -21,7 +21,7 @@ my $invalid_xml = File::Spec->catfile( $dir, 'invalid.sopm' );
     my $error = 'Cannot parse .sopm:';
 
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::sopmtest::execute( undef, {}, [ $textfile ] );
+        OPM::Maker::Command::sopmtest::execute( undef, {}, [ $textfile ] );
     };
 
     #diag $exec_output;
@@ -33,7 +33,7 @@ my $invalid_xml = File::Spec->catfile( $dir, 'invalid.sopm' );
     my $error = 'Cannot parse .sopm:';
 
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::sopmtest::execute( undef, {}, [ undef ] );
+        OPM::Maker::Command::sopmtest::execute( undef, {}, [ undef ] );
     };
 
     #diag $exec_output;
@@ -45,7 +45,7 @@ my $invalid_xml = File::Spec->catfile( $dir, 'invalid.sopm' );
     my $error = 'Cannot parse .sopm:';
 
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::sopmtest::execute( undef, {}, [ '/tmp/does/not/exist_yet.sopm' ] );
+        OPM::Maker::Command::sopmtest::execute( undef, {}, [ '/tmp/does/not/exist_yet.sopm' ] );
     };
 
     #diag $exec_output;
@@ -57,7 +57,7 @@ my $invalid_xml = File::Spec->catfile( $dir, 'invalid.sopm' );
     my $error = '.sopm is not valid:';
 
     my $exec_output = capture_stdout {
-        OTRS::OPM::Maker::Command::sopmtest::execute( undef, {}, [ $invalid_xml ] );
+        OPM::Maker::Command::sopmtest::execute( undef, {}, [ $invalid_xml ] );
     };
 
     #diag $exec_output;

@@ -1,11 +1,11 @@
-package OTRS::OPM::Maker::Command::dbtest;
+package OPM::Maker::Command::dbtest;
 
 # ABSTRACT: Test db definitions in .sopm files
 
 use strict;
 use warnings;
 
-use OTRS::OPM::Maker -command;
+use OPM::Maker -command;
 
 sub abstract {
     return "Check if DatabaseInstall and DatabaseUninstall sections in the .sopm are correct";
