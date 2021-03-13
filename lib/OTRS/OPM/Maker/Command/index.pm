@@ -97,7 +97,11 @@ sub execute {
         }
         
         my $file_node  = XML::LibXML::Element->new( 'File' );
-        (my $file_path = $opm_file) =~ s/\Q$dir//;
+        my $file_path = $opm_file;
+
+        $file_path =~ s/\Q$dir//      if $dir ne '.';
+        $file_path = '/' . $file_path if '/' ne substr $file_path, 0, 1;
+
         $file_node->appendText( $file_path );
         $root_elem->addChild( $file_node );
         
