@@ -5,9 +5,11 @@ use warnings;
 
 use App::Cmd::Setup -app;
 
-# ABSTRACT: Module/App to build and test OTRS packages
+# ABSTRACT: Module/App to build and test OTRS packages - (DEPRECATED)
 
 =head1 DESCRIPTION
+
+This module is deprecated. We support different ticketing systems like L<Znuny|https://znuny.org> and L<OTOBO|https://otobo.de>. So we renamed it to L<OPM::Maker>.
 
 If you do OTRS package development, you need to be able to check your package: Are all files of the package included in the file list in the sopm file? Is the sopm file valid? And you need to create the OPM file. There is otrs.PackageManager.pl included in OTRS installations, but sometimes you might not have an OTRS installation on the machine where you want to build the package (e.g. when you build the package in a L<Jenkins|http://jenkins-ci.org> job).
 
