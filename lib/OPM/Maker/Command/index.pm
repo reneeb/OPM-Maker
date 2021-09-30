@@ -55,7 +55,9 @@ sub execute {
     my $root_name;
     
     for my $opm_file ( sort @opm_files ) {
-        my $parser = XML::LibXML->new;
+        my $parser = XML::LibXML->new(
+            huge => 1,
+        );
         my $tree   = $parser->parse_file( $opm_file );
         
         $tree->setStandalone( 0 );
