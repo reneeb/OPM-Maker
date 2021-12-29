@@ -11,7 +11,11 @@ use Path::Class ();
 use XML::LibXML;
 
 use OPM::Maker -command;
-use OPM::Maker::Utils qw(reformat_size);
+use OPM::Maker::Utils qw(
+    reformat_size
+    check_args_sopm
+    read_ignore_file
+);
 
 sub abstract {
     return "Check if filelist in .sopm includes the files on your disk";
@@ -23,19 +27,17 @@ sub usage_desc {
 
 sub validate_args {
     my ($self, $opt, $args) = @_;
+
+    my $sopm = check_args_sopm( $args );
     
     $self->usage_error( 'need path to .sopm' ) if
-        !$args or
-        'ARRAY' ne ref $args or
-        !defined $args->[0] or
-        $args->[0] !~ /\.sopm\z/ or
-        !-f $args->[0];
+        !$sopm;
 }
 
 sub execute {
     my ($self, $opt, $args) = @_;
 
-    my $file = $args->[0];
+    my $file = check_args_sopm( $args );
 
     my %opts;
     if ( !$ENV{OPM_UNSECURE} ) {

@@ -9,6 +9,7 @@ use Path::Class ();
 use OPM::Validate;
 
 use OPM::Maker -command;
+use OPM::Maker::Utils qw(check_args_sopm);
 
 sub abstract {
     return "check .sopm if it is valid";
@@ -20,19 +21,16 @@ sub usage_desc {
 
 sub validate_args {
     my ($self, $opt, $args) = @_;
-    
+
+    my $sopm = check_args_sopm( $args, 1 );
     $self->usage_error( 'need path to .sopm' ) if
-        !$args or
-        'ARRAY' ne ref $args or
-        !defined $args->[0] or
-        $args->[0] !~ /\.sopm\z/ or
-        !-f $args->[0];
+        !$sopm;
 }
 
 sub execute {
     my ($self, $opt, $args) = @_;
     
-    my $file = $args->[0];
+    my $file = check_args_sopm( $args, 1 );
 
     if ( !defined $file ) {
         print "No file given!";

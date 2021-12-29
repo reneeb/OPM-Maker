@@ -9,7 +9,7 @@ use Carp qw(croak);
 use XML::LibXML;
 
 use OPM::Maker -command;
-use OPM::Maker::Utils qw(reformat_size);
+use OPM::Maker::Utils qw(reformat_size check_args_sopm);
 
 sub abstract {
     return "list dependencies for OPM packages";
@@ -21,19 +21,16 @@ sub usage_desc {
 
 sub validate_args {
     my ($self, $opt, $args) = @_;
-    
+
+    my $sopm = check_args_sopm( $args, 1 );
     $self->usage_error( 'need path to .sopm or .opm' ) if
-        !$args or
-        'ARRAY' ne ref $args or
-        !defined $args->[0] or
-        $args->[0] !~ /\.s?opm\z/ or
-        !-f $args->[0];
+        !$sopm;
 }
 
 sub execute {
     my ($self, $opt, $args) = @_;
     
-    my $file = $args->[0];
+    my $file = check_args_sopm( $args, 1 );
 
     my %opts;
     if ( !$ENV{OPM_UNSECURE} ) {
