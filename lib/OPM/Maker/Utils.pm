@@ -11,7 +11,6 @@ use File::Find::Rule;
 
 our @EXPORT_OK = qw(
     reformat_size
-    read_ignore_file
     check_args_sopm
 );
 
@@ -58,45 +57,6 @@ sub check_args_sopm {
     return $sopm;
 }
 
-sub read_ignore_file {
-    my ($path) = @_;
-
-    return if !-r $path;
-
-    my @files;
-
-    open my $fh, '<', $path;
-    while( my $fh_line = <$fh> ){
-        chomp $fh_line;
-
-        next if $fh_line =~ m{ \A \s* \# }x;
-
-        my ($file);
-
-        if ( ($file) = $fh_line =~ /^'(\\[\\']|.+)+'\s*/) {
-            $file =~ s/\\([\\'])/$1/g;
-        }
-        else {
-            ($file) = $fh_line =~ /^(\S+)\s*/;
-        }
-
-        next unless $file;
-
-        push @files, $file;
-    }
-
-    close $fh;
-
-    chomp @files;
-
-    {
-        local $/ = "\r";
-        chomp @files;
-    }
-
-    return @files;
-}
-
 1;
 
 =head1 FUNCTIONS
@@ -116,7 +76,3 @@ Checks the given arguments for the .sopm file. If it
 isn't in the arguemnts, OPM::Maker tries to find one
 in the current directory.
 
-=head2 read_ignore_file
-
-Reads a file like MANIFEST.SKIP or .gitignore
-and "parses" the file.
