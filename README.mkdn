@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/reneeb/OPM-Maker.svg?branch=master)](https://travis-ci.org/reneeb/OPM-Maker)
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/OPM-Maker.png)](https://cpants.cpanauthors.org/dist/OPM-Maker)
 [![GitHub issues](https://img.shields.io/github/issues/reneeb/OPM-Maker.svg)](https://github.com/reneeb/OPM-Maker/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OPM-Maker-1.10)](https://cpancoverbadge.perl-services.de/OPM-Maker-1.10)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OPM-Maker-1.11)](https://cpancoverbadge.perl-services.de/OPM-Maker-1.11)
 
 # NAME
 
@@ -9,11 +9,11 @@ OPM::Maker - Module/App to build and test OPM packages for Znuny, OTOBO, ((OTRS)
 
 # VERSION
 
-version 1.10
+version 1.11
 
 # DESCRIPTION
 
-If you do customizing for ticketing systems like [Znuny](https://znuny.org), [OTOBO](https://otobo.de) or ((OTRS)) Community Edition, you need to be able to check your package: Are all files of the package included in the file list in the sopm file? Is the sopm file valid? And you need to create the OPM file. There is otrs.PackageManager.pl included in OTRS installations, but sometimes you might not have an OTRS installation on the machine where you want to build the package (e.g. when you build the package in a [Jenkins](http://jenkins-ci.org) job).
+If you do customizing for ticketing systems like [Znuny](https://znuny.org), [OTOBO](https://otobo.de) or ((OTRS)) Community Edition, you need to be able to check your package: Are all files of the package included in the file list in the sopm file? Is the sopm file valid? And you need to create the OPM file. There is xxxx.Console.pl (where xxxx is either _otobo_ or _otrs_) included in stanrdard installations, but sometimes you might not have a ticket system installed on the machine where you want to build the package (e.g. when you build the package in a CI/CD job).
 
 `OPM::Maker` provides `opmbuild` that is a small tool for several tasks. At the moment it supports:
 
