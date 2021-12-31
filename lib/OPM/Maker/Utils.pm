@@ -43,10 +43,14 @@ sub check_args_sopm {
     my @suffixes = $opm ? ('*.opm', '*.sopm') : ('*.sopm');
 
     if ( !$sopm ) {
-        ($sopm) = map {
+        my @all_sopm = map {
             $_ =~ s{\A\.[/\\]}{};
             $_;
         } File::Find::Rule->file->name(@suffixes)->maxdepth(1)->in('.');
+
+        die 'Found more than one .sopm file' if @all_sopm > 1;
+
+        $sopm = $all_sopm[0];
     }
 
     $sopm //= '';
