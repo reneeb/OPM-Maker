@@ -1,5 +1,4 @@
 package OPM::Maker::Command::info;
-$OPM::Maker::Command::info::VERSION = '1.12';
 use strict;
 use warnings;
 
