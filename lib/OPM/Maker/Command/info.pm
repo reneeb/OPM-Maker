@@ -1,4 +1,6 @@
 package OPM::Maker::Command::info;
+
+
 use strict;
 use warnings;
 

@@ -9,3 +9,5 @@ use OPM::Maker;
 OPM::Maker->run;
 
 package opmbuild;
+
+1;
