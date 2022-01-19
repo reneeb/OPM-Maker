@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/reneeb/OPM-Maker.svg?branch=master)](https://travis-ci.org/reneeb/OPM-Maker)
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/OPM-Maker.png)](https://cpants.cpanauthors.org/dist/OPM-Maker)
 [![GitHub issues](https://img.shields.io/github/issues/reneeb/OPM-Maker.svg)](https://github.com/reneeb/OPM-Maker/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OPM-Maker-1.14)](https://cpancoverbadge.perl-services.de/OPM-Maker-1.14)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/OPM-Maker-1.15)](https://cpancoverbadge.perl-services.de/OPM-Maker-1.15)
 
 # NAME
 
@@ -9,7 +9,7 @@ OPM::Maker - Module/App to build and test OPM packages for Znuny, OTOBO, ((OTRS)
 
 # VERSION
 
-version 1.14
+version 1.15
 
 # DESCRIPTION
 
