@@ -109,34 +109,8 @@ sub _json {
 
 __END__
 
-=pod
-
-=encoding UTF-8
-
-=head1 NAME
-
-OPM::Maker::Command::info - show info about opmbuild and the commands
-
-=head1 VERSION
-
-version 1.12
-
 =head1 DESCRIPTION
 
 This command will show some information about opmbuild and its commands.
 If I<--no-cpan-info> is omitted, it will show the name of the distribution
 that ships the command.
-
-=head1 AUTHOR
-
-Renee Baecker <reneeb@cpan.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2017 by Renee Baecker.
-
-This is free software, licensed under:
-
-  The Artistic License 2.0 (GPL Compatible)
-
-=cut
