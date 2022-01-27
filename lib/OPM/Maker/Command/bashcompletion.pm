@@ -116,9 +116,14 @@ _opmbuild()
     opts="%s"
 
     case "${prev}" in
+        opmbuild)
+            ;;
 %s
         *)
-        ;;
+            compopt -o nospace
+            COMPREPLY=( $( compgen -d -f -- $cur ) )
+            return 0
+            ;;
     esac
 
     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
