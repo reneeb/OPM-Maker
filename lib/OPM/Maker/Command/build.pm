@@ -25,7 +25,7 @@ sub usage_desc {
 sub opt_spec {
     return (
         [ "output=s",  "Output path for OPM file" ],
-        [ "basedir=s",  "Base directory of SOPM files" ],
+        [ "basedir=s", "Base directory of SOPM files" ],
         [ "version=s", "Version to be used (override the one from the sopm file)" ],
     );
 }
